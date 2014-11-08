@@ -5,22 +5,20 @@ import QtSensors 5.3
 
 ApplicationWindow {
     visible: true
-    width: 335
+    width: 1335
     height: 500
     color: "#333"
 
     Item{
         x: 5
         y: 9
-        width: 325
-        height: 240
+        anchors.fill: parent
 
         Calendar{
             objectName: "Calendar"
             x: 4
             y: 5
-            width: 318
-            height: 230
+            anchors.fill: parent
             weekNumbersVisible: true
 
             style: CalendarStyle {
@@ -70,9 +68,14 @@ ApplicationWindow {
         width: 325
         height: 240*/
 
+
     title: qsTr("MoneyInTheBank")
 
 }
+
+
+
+
 
 
 

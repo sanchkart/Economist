@@ -1,6 +1,9 @@
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
+#include <QDate>
+
+
 
 #include "Calendar.h"
 
@@ -9,7 +12,6 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     QQmlApplicationEngine engine;
-
     QQmlComponent qComponent(&engine,
         QUrl(QStringLiteral("qrc:/main.qml")));
     QObject *qObject = qComponent.create();
@@ -19,8 +21,7 @@ int main(int argc, char *argv[])
     if(qobjCalendar)
     {
        Calendar *objCalendar = new Calendar();
-       QObject::connect(qobjCalendar, SIGNAL(clicked()), objCalendar, SLOT(ShowShedulerWindow()));
-
+       QObject::connect(qobjCalendar, SIGNAL(clicked(QDateTime)), objCalendar, SLOT(ShowShedulerWindow()));
     }
 
     return app.exec();
