@@ -15,65 +15,65 @@ ApplicationWindow {
         width: 325
         height: 240
 
-    Calendar{
-        x: 4
-        y: 5
-        width: 318
-        height: 230
-        weekNumbersVisible: true
+        Calendar{
+            objectName: "Calendar"
+            x: 4
+            y: 5
+            width: 318
+            height: 230
+            weekNumbersVisible: true
 
-        style: CalendarStyle {
-            gridVisible: false
-                    dayDelegate: Rectangle {
-                        gradient: Gradient {
-                            GradientStop {
-                                position: 0.00
-                                color: styleData.selected ? "#111" : (styleData.visibleMonth && styleData.valid ? "#444" : "#666");
+            style: CalendarStyle {
+                gridVisible: false
+                        dayDelegate: Rectangle {
+                            gradient: Gradient {
+                                GradientStop {
+                                    position: 0.00
+                                    color: styleData.selected ? "#111" : (styleData.visibleMonth && styleData.valid ? "#444" : "#666");
+                                }
+                                GradientStop {
+                                    position: 1.00
+                                    color: styleData.selected ? "#444" : (styleData.visibleMonth && styleData.valid ? "#111" : "#666");
+                                }
+                                GradientStop {
+                                    position: 1.00
+                                    color: styleData.selected ? "#777" : (styleData.visibleMonth && styleData.valid ? "#111" : "#666");
+                                }
                             }
-                            GradientStop {
-                                position: 1.00
-                                color: styleData.selected ? "#444" : (styleData.visibleMonth && styleData.valid ? "#111" : "#666");
+
+                            Label {
+                                text: styleData.date.getDate()
+                                anchors.centerIn: parent
+                                color: styleData.valid ? "white" : "grey"
                             }
-                            GradientStop {
-                                position: 1.00
-                                color: styleData.selected ? "#777" : (styleData.visibleMonth && styleData.valid ? "#111" : "#666");
+
+                           Rectangle {
+                                width: parent.width
+                                height: 1
+                                color: "#555"
+                                anchors.bottom: parent.bottom
+                            }
+
+                            Rectangle {
+                                width: 1
+                                height: parent.height
+                                color: "#555"
+                                anchors.right: parent.right
                             }
                         }
-
-                        Label {
-                            text: styleData.date.getDate()
-                            anchors.centerIn: parent
-                            color: styleData.valid ? "white" : "grey"
-                        }
-
-                       Rectangle {
-                            width: parent.width
-                            height: 1
-                            color: "#555"
-                            anchors.bottom: parent.bottom
-                        }
-
-                        Rectangle {
-                            width: 1
-                            height: parent.height
-                            color: "#555"
-                            anchors.right: parent.right
-                        }
-                    }
+            }
         }
     }
-}   
-    Item {
+    /*Item {
         x: 5
         y: 255
         width: 325
-        height: 240
-
-
-
-    }
+        height: 240*/
 
     title: qsTr("MoneyInTheBank")
 
-
 }
+
+
+
+

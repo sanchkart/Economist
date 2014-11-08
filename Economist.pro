@@ -6,7 +6,7 @@ QT += qml quick widgets sensors
 TARGET = stackedbarchart
 
 SOURCES += main.cpp \
-    Chart.cpp
+    Calendar.cpp
 
 RESOURCES += qml.qrc
 
@@ -15,3 +15,6 @@ QML_IMPORT_PATH =
 
 # Default rules for deployment.
 include(deployment.pri)
+
+HEADERS += \
+    Calendar.h
