@@ -1,12 +1,13 @@
 TEMPLATE = app
 
-QT += qml quick widgets sensors
+QT += qml quick widgets sensors core
 
 
 TARGET = stackedbarchart
 
 SOURCES += main.cpp \
-    Calendar.cpp
+    Calendar.cpp \
+    SwipeGesture.cpp
 
 RESOURCES += qml.qrc
 
@@ -17,4 +18,5 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    Calendar.h
+    Calendar.h \
+    SwipeGesture.h

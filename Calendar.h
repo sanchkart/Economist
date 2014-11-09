@@ -3,13 +3,13 @@
 
 #include <QObject>
 
-class Calendar : public QObject
+class MyCalendar : public QObject
 {
     Q_OBJECT
 public:
-    Calendar();
+    MyCalendar();
 
-private slots:
+public slots:
     void ShowShedulerWindow() const;
 };
 

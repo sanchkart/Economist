@@ -1,14 +1,17 @@
 #include "Calendar.h"
 
-#include <QMessageBox>
+#include <QQmlApplicationEngine>
+#include <QQmlComponent>
 
-Calendar::Calendar()
+MyCalendar::MyCalendar()
 {
 }
 
-void Calendar::ShowShedulerWindow() const
+void MyCalendar::ShowShedulerWindow() const
 {
-     QMessageBox msgBox;
-     msgBox.setText("Button pushed");
-     msgBox.exec();
+    QQmlApplicationEngine engine;
+    QQmlComponent qComponent(&engine,
+        QUrl(QStringLiteral("qrc:/Sheduler.qml")));
+
+    QObject *qObject = qComponent.create();
 }
