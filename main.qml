@@ -6,10 +6,11 @@ import QtSensors 5.3
 ApplicationWindow {
     title: qsTr("MoneyInTheBank")
     visible: true
-    width: 335
+    width: 1335
     height: 500
     color: "#333"
 
+<<<<<<< HEAD
     Flickable {
         width: 150; height: 150
         contentWidth: 300; contentHeight: 300
@@ -29,6 +30,18 @@ ApplicationWindow {
             y: 8
             width: 307
             height: 344
+=======
+    Item{
+        x: 5
+        y: 9
+        anchors.fill: parent
+
+        Calendar{
+            objectName: "Calendar"
+            x: 4
+            y: 5
+            anchors.fill: parent
+>>>>>>> origin/master
             weekNumbersVisible: true
 
             style: CalendarStyle {
@@ -70,6 +83,29 @@ ApplicationWindow {
                     }
                 }
             }
+<<<<<<< HEAD
        }
    }
 }
+=======
+        }
+    }
+    /*Item {
+        x: 5
+        y: 255
+        width: 325
+        height: 240*/
+
+
+    title: qsTr("MoneyInTheBank")
+
+}
+
+
+
+
+
+
+
+
+>>>>>>> origin/master
