@@ -18,7 +18,7 @@ ApplicationWindow {
         flickableDirection: Flickable.HorizontalFlick
         focus: true
 
-        Behavior on contentX { PropertyAnimation {} }
+        Behavior on contentX { PropertyAnimation { duration: 500} }
 
         onMovementEnded: {
               flicable.contentX = contentWidth / 2
