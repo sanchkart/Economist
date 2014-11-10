@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
        QObject::connect(qobjCalendar, SIGNAL(clicked(QDateTime)), objCalendar, SLOT(ShowShedulerWindow()));
     }*/
 
-    QObject *qobjSwipeGesture = qObject->findChild<QObject*>("swipeArea");
+   /* QObject *qobjSwipeGesture = qObject->findChild<QObject*>("swipeArea");
     if(qobjSwipeGesture){
        SwipeGesture *objSwipe = new SwipeGesture();
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
        QObject::connect(qobjSwipeGesture, SIGNAL(swipe(QPointF)),
            objSwipe, SLOT(DoSwipe(QPointF)));
-    }
+    }*/
 
     return app.exec();
 }

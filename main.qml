@@ -12,6 +12,7 @@ ApplicationWindow {
 
     Flickable {
         id: flicable
+        objectName: "flickable"
         anchors.fill: parent
         contentWidth: 665; contentHeight: 490
         flickableDirection: Flickable.HorizontalFlick
@@ -22,6 +23,10 @@ ApplicationWindow {
                 duration: 1000
                 easing.type: Easing.OutBounce
             }
+        }
+
+        onFlickEnded: {
+            flicable.contentX = contentWidth / 2
         }
 
         Calendar{
