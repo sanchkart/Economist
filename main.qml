@@ -11,12 +11,14 @@ ApplicationWindow {
     color: "#333"
 
     Flickable {
+        id: flicable
         anchors.fill: parent
-        contentWidth: 300; contentHeight: 300
+        contentWidth: 665; contentHeight: 490
+        flickableDirection: Flickable.HorizontalFlick
 
         rebound: Transition {
             NumberAnimation {
-                properties: "y"
+                properties: "x"
                 duration: 1000
                 easing.type: Easing.OutBounce
             }
@@ -70,6 +72,17 @@ ApplicationWindow {
                     }
                 }
             }
-       }
-   }
+        }
+
+        Button {
+            id: button
+            x: 336
+            y: 5
+            width: 325
+            height: 490
+            text: qsTr("Button")
+        }
+    }
+
+
 }
