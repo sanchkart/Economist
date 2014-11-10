@@ -16,6 +16,13 @@ ApplicationWindow {
         anchors.fill: parent
         contentWidth: 665; contentHeight: 490
         flickableDirection: Flickable.HorizontalFlick
+        focus: true
+
+        Behavior on contentX { PropertyAnimation {} }
+
+        onMovementEnded: {
+              flicable.contentX = contentWidth / 2
+         }
 
         rebound: Transition {
             NumberAnimation {
@@ -23,10 +30,6 @@ ApplicationWindow {
                 duration: 1000
                 easing.type: Easing.OutBounce
             }
-        }
-
-        onFlickEnded: {
-            flicable.contentX = contentWidth / 2
         }
 
         Calendar{
